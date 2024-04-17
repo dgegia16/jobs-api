@@ -1,4 +1,5 @@
 import User from "./user.model.js";
+import Job from "../../modules/Vacancy/vacancy.model.js";
 import { getVacancyByIdService } from "../Vacancy/vacancy.service.js";
 
 export async function currentUserService(currentUserId) {
@@ -17,5 +18,6 @@ export async function applyVacancyService(jobId, userId) {
   } else {
     user.appliedJobs.push(job._id);
     await user.save();
+    return "Applied!"
   }
 }
