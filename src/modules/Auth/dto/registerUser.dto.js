@@ -11,5 +11,5 @@ export const registerUserDto = [
     .withMessage("არ უნდა იყოს ცარიელი")
     .isLength({ min: 8 })
     .withMessage("მინიმუმ 8 სიმბოლო"),
-  body("role").optional().isIn(["seller", "user"]).withMessage("არასწორი როლი"),
+  body("role").optional().isIn(["recruiter", "user"]).withMessage("არასწორი როლი"),
 ];

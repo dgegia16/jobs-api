@@ -11,5 +11,5 @@ export const loginUserDto = [
     .withMessage("არ უნდა იყოს ცარიელი")
     .isLength({ min: 8 })
     .withMessage("მინიმუმ 8 სიმბოლო"),
-  body("email").notEmpty().withMessage("არ უნდა იყოს ცარიელი").isEmail(),
+  
 ];
