@@ -3,6 +3,7 @@ import { checkAuth } from "../../middlewares/auth.middleware.js";
 import { validate } from "../../middlewares/validation.middleware.js";
 import VacancyController from "./vacancy.controller.js";
 
+
 export const VacancyRouter = express.Router();
 
 VacancyRouter.post(
@@ -11,3 +12,11 @@ VacancyRouter.post(
   validate,
   VacancyController.createVacancy
 );
+
+
+VacancyRouter.get(
+    "/get-vacancies",
+    checkAuth(),
+    validate,
+    VacancyController.getVacancies
+)

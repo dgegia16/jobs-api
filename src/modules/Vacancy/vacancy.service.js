@@ -1,5 +1,10 @@
 import Vacancy from "./vacancy.model.js";
 
+export async function getAllVacanciesService() {
+  const vacancies = await Vacancy.find();
+  return vacancies;
+}
+
 export async function createVacancyService(body, userId) {
   const vacancy = new Vacancy({ ...body, owner: userId });
   await vacancy.save();

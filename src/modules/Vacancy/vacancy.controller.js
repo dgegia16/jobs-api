@@ -1,5 +1,5 @@
 import {
-  getVacancyByIdService,
+  getAllVacanciesService,
   createVacancyService,
   appliedVacancyService,
 } from "./vacancy.service.js";
@@ -18,6 +18,15 @@ class VacancyController {
     try {
       const jobs = await appliedVacancyService(req.user.userId);
       res.status(200).json(jobs);
+    } catch (error) {
+      res.status(400).json({ message: error.message });
+    }
+  }
+
+  async getVacancies(req, res) {
+    try {
+      const vacancies = await getAllVacanciesService();
+      res.status(200).json(vacancies);
     } catch (error) {
       res.status(400).json({ message: error.message });
     }
